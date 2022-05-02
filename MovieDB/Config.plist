@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>youtube_url</key>
+	<string>https://www.youtube.com/watch?v=</string>
+	<key>image_url</key>
+	<string>https://image.tmdb.org/t/p</string>
+	<key>api_token</key>
+	<string>eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTc4NWM1YWZhMTk1ZmNhNjRjNjdmZDU2YjllYTMxYiIsInN1YiI6IjYxMjZhZWQyZmRmOGI3MDA0NzcyN2E4YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NCXjI8uvQSVYABZZipn12pPd2VrLumDxwCfAF9YFcR0</string>
+	<key>base_url</key>
+	<string>https://api.themoviedb.org/3</string>
+</dict>
+</plist>

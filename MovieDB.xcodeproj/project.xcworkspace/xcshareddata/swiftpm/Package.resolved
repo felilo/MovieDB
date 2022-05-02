@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
+        "package": "ToolsApiAFL",
+        "repositoryURL": "https://andrefelo@bitbucket.org/andrefelo/apiprovider.git",
+        "state": {
+          "branch": "master",
+          "revision": "b8afdcbd35ce5fe63b3c2ce61d7dec5fa3862c41",
+          "version": null
+        }
+      },
+      {
+        "package": "PatterCoordinator",
+        "repositoryURL": "https://andrefelo@bitbucket.org/andrefelo/pattern_coordinator.git",
+        "state": {
+          "branch": "master",
+          "revision": "8064884eaec2bffa165572e77bb30f87d5a769ca",
+          "version": null
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
+          "version": "5.11.1"
+        }
+      },
+      {
+        "package": "ToolsAFL",
+        "repositoryURL": "https://andrefelo@bitbucket.org/andrefelo/tools_afl.git",
+        "state": {
+          "branch": "master",
+          "revision": "69c053079a60a9a544af066bf22a78cc4fc65d81",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
