@@ -35,10 +35,7 @@ A continuacion una descripcion general de la estructura del proyecto y como esta
 
     -   extensions: 
         -   UIView+Helpers: Encargada de crear nuevas funcionalidades para la clase UIView
-        -   CollectionView+Helpers: Encargada de crear nuevas funcionalidades para la clase CollectionView
-    -   core data: 
-        -   Manejadores para el uso de la db
-        -   Entidades
+        -   CollectionView+Helpers: Encargada de crear nuevas funcionalidades para la clase CollectionView.
     -   providers: Provedores para obtener datos desde un repositorio
         -   movie provider:
             -   MovieProvider+Protocols: Contrato q deben implementar todos los servicio
