@@ -70,7 +70,7 @@ A continuacion una descripcion general de la estructura del proyecto y como esta
 
 ### Cambiar configuraciones globales del proyecto (opcional) ###
 
-Para modificar los parametros globales del proyecto editar el archivo "Config.plist", ubicado en el directorio "TechnicalTest"
+Para modificar los parametros globales del proyecto editar el archivo "Config.plist", ubicado en el directorio "MovieDB"
 
 
 ### Principio de responsabilidad unica? ###
