@@ -45,9 +45,6 @@ A continuacion una descripcion general de la estructura del proyecto y como esta
             -   VideoProvider+Protocols: Contrato q deben implementar todos los servicio
             -   VideoProvider: Encargado de pedir obtener los datos de un servicio
             -   VideoApiService: Clase que se encarga de ejecutar peticiones HTTP a travez del ResquestManager y procesar los datos
-        -   tv provider
-        -   video provider
-        -   entertainment provider
     -   modelos: son clases encargadas de definir el modelo de negocio de la app:
         -   MovieModel: Clase q esta compuesta por propiedades y funciones los cuales se encargana de definir el modelo de negocio
         -   VideoModel: Clase q esta compuesta por propiedades y funciones los cuales se encargana de definir el modelo de negocio

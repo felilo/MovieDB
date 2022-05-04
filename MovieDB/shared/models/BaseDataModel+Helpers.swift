@@ -23,14 +23,6 @@ enum EntertainmentMediaCategory: String, CaseIterable {
       case .upcoming: return "Upcoming"
     }
   }
-  
-//  func titleWithCategotyType(_ type: EntertainmentMediaType) -> String {
-//    switch self {
-//      case .popular: return "Popular (\(type.title))"
-//      case .topRated: return "Top Rated (\(type.title))"
-//      case .upcoming: return "Upcoming (\(type.title))"
-//    }
-//  }
 }
 
 
@@ -57,7 +49,7 @@ enum ImageWidth: String {
 }
 
 
-// this protocol execute the actions to changes properties' values
+// this protocol contains actions that allow to you apply changes to the properties of an object
 protocol EntertainmentMediaPropertyUpdater: AnyObject {
   func updateVideos(_ value: [VideoModel])
   func getVideos() -> [VideoModel]

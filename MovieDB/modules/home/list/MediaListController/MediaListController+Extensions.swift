@@ -34,17 +34,17 @@ extension MediaListController: UISearchResultsUpdating, UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     timer?.invalidate()
     timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { [weak self] _ in
-      self?.viewModel.isFiltering = true
       self?.viewModel.filterItems(searchText)
     }
   }
   
-  func updateSearchResults(for searchController: UISearchController) { }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    viewModel.isFiltering = false
-    viewModel.filterItems("")
+    viewModel.onCancelSearch(text: searchBar.text)
   }
+  
+  
+  func updateSearchResults(for searchController: UISearchController) { }
 }
 
 
@@ -58,8 +58,11 @@ extension MediaListController: UICollectionViewDelegateFlowLayout {
   
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let height = viewModel.numberOfRowsInSection(indexPath.section) == 0 ? 0 : height
     return CGSize(width: view.frame.width, height: height)
   }
+  
+  
   
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

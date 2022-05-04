@@ -8,7 +8,7 @@
 import Foundation
 
 
-class MediaListViewModel: NSObject {
+class MediaListViewModel {
   
   
   typealias ModelItem = (key: EntertainmentMediaCategory, value: [EntertainmentMediaItem])
@@ -55,7 +55,6 @@ class MediaListViewModel: NSObject {
   init(coordinator: HomeCoordinator, provider: MovieProvider){
     self.coordinator = coordinator
     self.provider = provider
-    super.init()
   }
   
   
@@ -95,10 +94,11 @@ class MediaListViewModel: NSObject {
   private func handleSuccessResult(_ category: EntertainmentMediaCategory, items: [EntertainmentMediaItem]) {
     if let index = self.items.firstIndex(where: { $0.key == category }) {
       self.items[index].value = items
+      onFetchItems.value = false
     } else {
       self.items.append((key: category, value: items))
+      onFetchItems.value = true
     }
-    onFetchItems.value = true
   }
   
   
@@ -108,7 +108,6 @@ class MediaListViewModel: NSObject {
       title: "Opps",
       message: error.localizedDescription
     )
-    
   }
 }
 

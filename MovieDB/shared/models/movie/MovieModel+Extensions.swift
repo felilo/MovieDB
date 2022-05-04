@@ -49,8 +49,9 @@ extension MovieModel: EntertainmentMediaItem {
   
   
   func exist(value: String) -> Bool {
-    return title?.lowercased().contains(value.lowercased()) == true ||
-    overview?.lowercased().contains(value.lowercased()) == true || value.isEmpty
+    let cleanValue = value.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+    return title?.lowercased().contains(cleanValue) == true ||
+    overview?.lowercased().contains(cleanValue) == true || value.isEmpty
   }
   
   

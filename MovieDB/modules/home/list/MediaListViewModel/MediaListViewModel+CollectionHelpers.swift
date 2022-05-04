@@ -43,6 +43,7 @@ extension MediaListViewModel {
   
   
   func filterItems(_ value: String) {
+    isFiltering = true
     itemsFiltered = items.map { section -> ModelItem in
       var cSection = section
       cSection.value = section.value.filter({
@@ -50,6 +51,14 @@ extension MediaListViewModel {
       })
       return cSection
     }
-    onFetchItems.value = true
+    onFetchItems.value = false
+  }
+  
+  
+  func onCancelSearch(text: String?) {
+    isFiltering = false
+    if text?.isEmpty != true {
+      onFetchItems.value = false
+    }
   }
 }

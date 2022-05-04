@@ -8,7 +8,7 @@
 import Foundation
 
 
-class VideoPlayerViewModel: NSObject {
+class VideoPlayerViewModel {
   
   
   typealias ModelItem = VideoModel
@@ -41,7 +41,6 @@ class VideoPlayerViewModel: NSObject {
   init(coordinator: HomeCoordinator, item: ModelItem){
     self.item = item
     self.coordinator = coordinator
-    super.init()
   }
   
   

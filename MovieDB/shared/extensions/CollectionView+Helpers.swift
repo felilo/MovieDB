@@ -9,30 +9,27 @@ import UIKit
 
 extension UICollectionView {
   
+  
   func beginRefreshing() {
-    // Make sure that a refresh control to be shown was actually set on the view
-    // controller and the it is not already animating. Otherwise there's nothing
-    // to refresh.
-    guard let refreshControl = refreshControl, !refreshControl.isRefreshing else {
-      return
-    }
-    
-    // Start the refresh animation
-    refreshControl.beginRefreshing()
-    
-    // Make the refresh control send action to all targets as if a user executed
-    // a pull to refresh manually
-    refreshControl.sendActions(for: .valueChanged)
-    
-    // Apply some offset so that the refresh control can actually be seen
-    let height = (frame.height / 6) // refreshControl.frame.height + contentInset.top
+    guard let refreshControl = refreshControl,
+            !refreshControl.isRefreshing
+    else { return }
+    let height = (frame.height / 6)
     let contentOffset = CGPoint(x: -contentInset.left, y: -height)
+    refreshControl.beginRefreshing()
     setContentOffset(contentOffset, animated: true)
+    refreshControl.sendActions(for: .valueChanged)
   }
+  
+  
+  @objc func reloadSectionWithDelay() {
+    for item in (0..<numberOfSections) {
+      reloadSections(IndexSet.init(integer: item))
+    }
+  }
+  
   
   func endRefreshing() {
     refreshControl?.endRefreshing()
   }
-  
-  
 }

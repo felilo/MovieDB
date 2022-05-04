@@ -39,7 +39,7 @@ class MainCoordinator: Coordinator {
   
   
   func start(animated: Bool = false) {
-    let coordinator = HomeCoordinator.init(withPresent: self, animated: false)
+    let coordinator = HomeCoordinator(present: self, animated: false)
     childCoordinators += [coordinator]
     coordinator.start(animated: false)
   }

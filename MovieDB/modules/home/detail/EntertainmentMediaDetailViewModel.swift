@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EntertainmentMediaDetailViewModel: NSObject {
+class EntertainmentMediaDetailViewModel {
   
   
   typealias ModelItem = EntertainmentMediaItem
@@ -40,7 +40,6 @@ class EntertainmentMediaDetailViewModel: NSObject {
   init(coordinator: HomeCoordinator, provider: VideoProvider, item: ModelItem){
     self.coordinator = coordinator
     self.provider = provider
-    super.init()
     self.item.value = item
   }
   

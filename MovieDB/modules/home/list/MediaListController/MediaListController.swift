@@ -112,14 +112,18 @@ class MediaListController: UICollectionViewController {
   
   
   @objc private func refresh( ) {
-    handleOnPullToRefresh()
+    DispatchQueue.main.async { [weak self] in
+      self?.handleOnPullToRefresh()
+    }
   }
   
   
   private func setupObservers() {
     
-    viewModel.onFetchItems.bind { [weak self] _ in
-      self?.handleOnFetchItems()
+    viewModel.onFetchItems.bind { [weak self] reloadData in
+      DispatchQueue.main.async{ [weak self] in
+        self?.handleOnFetchItems(reloadData)
+      }
     }
     
     viewModel.onError.bind { [weak self] msj in
@@ -128,11 +132,15 @@ class MediaListController: UICollectionViewController {
   }
   
   
-  private func handleOnFetchItems() {
-    DispatchQueue.main.async {
-      self.collectionView.endRefreshing()
-      self.collectionView.reloadData()
+  private func handleOnFetchItems(_ reloadData: Bool?) {
+      
+    guard reloadData == true else {
+      collectionView.endRefreshing()
+      collectionView.perform(#selector(collectionView.reloadSectionWithDelay), with: nil, afterDelay: 0.05)
+      return
     }
+    collectionView.endRefreshing()
+    collectionView.perform(#selector(collectionView.reloadData), with: nil, afterDelay: 0.05)
   }
   
   

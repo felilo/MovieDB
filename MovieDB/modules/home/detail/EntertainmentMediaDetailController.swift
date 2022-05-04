@@ -99,30 +99,26 @@ class EntertainmentMediaDetailController: UIViewController {
   }
   
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    navigationController?.setNavigationBarHidden(false, animated: true)
-  }
-  
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    navigationController?.setNavigationBarHidden(true, animated: true)
-  }
-  
-  
   // ---------------------------------------------------------------------
   // MARK: Helpers func
   // ---------------------------------------------------------------------
   
   
   private func setup() {
-    navigationController?.setNavigationBarHidden(true, animated: false)
-    navigationItem.setHidesBackButton(true, animated: false)
     scrollView.delegate = self
+    setupCloseButton()
     setupPlayButton()
     populateData()
     viewModel.fetchVideos()
+  }
+  
+  
+  func setupCloseButton() {
+    closeButton.removeFromSuperview()
+    navigationItem.setHidesBackButton(true, animated: false)
+    navigationItem.leftBarButtonItem = .init(customView: closeButton)
+    navigationController?.interactivePopGestureRecognizer?.delegate = self
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
   }
   
   
@@ -187,7 +183,7 @@ class EntertainmentMediaDetailController: UIViewController {
 
 
 
-extension EntertainmentMediaDetailController: UIScrollViewDelegate {
+extension EntertainmentMediaDetailController: UIScrollViewDelegate, UIGestureRecognizerDelegate {
   
   
   // ---------------------------------------------------------------------

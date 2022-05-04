@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EntertainmentMediaDetailController" customModule="TechnicalTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EntertainmentMediaDetailController" customModule="MovieDB" customModuleProvider="target">
             <connections>
                 <outlet property="closeButton" destination="qjL-MT-hUV" id="ZGK-l5-3Q4"/>
                 <outlet property="containerPlayButtonView" destination="dwf-yI-3c9" id="oQG-Uy-hYO"/>
@@ -130,7 +130,7 @@
                     <color key="tintColor" white="0.0" alpha="0.71102773909999994" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal">
                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="image" image="xmark" catalog="system" symbolScale="large" renderingMode="template"/>
+                        <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large" renderingMode="template"/>
                     </state>
                     <connections>
                         <action selector="closeActionButton:" destination="-1" eventType="touchUpInside" id="Z7W-a7-Tiv"/>
@@ -194,9 +194,9 @@
     </objects>
     <resources>
         <image name="apod" width="473" height="842"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="placeholder" width="80" height="60"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

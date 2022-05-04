@@ -25,7 +25,7 @@ class HomeCoordinator: Coordinator {
   // ---------------------------------------------------------------------
   
   
-  init(withPresent parent: Coordinator, animated: Bool = true) {
+  init(present parent: Coordinator, animated: Bool = true) {
     self.parent = parent
     root.modalPresentationStyle = .fullScreen
     root.setNavigationBarHidden(false, animated: false)
