@@ -30,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apod" translatesAutoresizingMaskIntoConstraints="NO" id="vDi-Rg-y6r" userLabel="I">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vDi-Rg-y6r" userLabel="I">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rE-Pm-93B">
@@ -47,7 +47,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="placeholder" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-MK-X7k">
                             <rect key="frame" x="0.0" y="0.0" width="390" height="313"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="337" id="wwe-aq-jP2"/>
+                                <constraint firstAttribute="height" priority="750" constant="337" id="wwe-aq-jP2"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wvo-88-lEq">
@@ -120,7 +120,7 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjL-MT-hUV">
-                    <rect key="frame" x="330" y="44" width="40" height="40"/>
+                    <rect key="frame" x="20" y="44" width="40" height="40"/>
                     <color key="backgroundColor" white="1" alpha="0.68388225229999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qjL-MT-hUV" secondAttribute="height" multiplier="1:1" id="JrZ-7R-BvX"/>
@@ -171,7 +171,7 @@
             <color key="backgroundColor" systemColor="systemGray5Color"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="0bc-5g-Fq8" secondAttribute="bottom" id="3RR-gL-tId"/>
-                <constraint firstItem="MSk-Tr-ECj" firstAttribute="trailing" secondItem="qjL-MT-hUV" secondAttribute="trailing" constant="20" id="6KZ-Wk-NhU"/>
+                <constraint firstItem="qjL-MT-hUV" firstAttribute="leading" secondItem="MSk-Tr-ECj" secondAttribute="leading" constant="20" id="6CZ-qG-KVv"/>
                 <constraint firstItem="vDi-Rg-y6r" firstAttribute="leading" secondItem="Ay7-JB-wb5" secondAttribute="leading" id="6qr-yT-znc"/>
                 <constraint firstItem="ARe-MK-X7k" firstAttribute="top" secondItem="9rE-Pm-93B" secondAttribute="top" priority="999" id="C3U-Ah-jMo"/>
                 <constraint firstItem="vDi-Rg-y6r" firstAttribute="top" secondItem="Ay7-JB-wb5" secondAttribute="top" id="INa-Xj-T3c"/>
@@ -193,7 +193,6 @@
         </view>
     </objects>
     <resources>
-        <image name="apod" width="473" height="842"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="placeholder" width="80" height="60"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
