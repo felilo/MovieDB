@@ -72,7 +72,7 @@ Para modificar los parametros globales del proyecto editar el archivo "Config.pl
 
 ### Principio de responsabilidad unica? ###
 
-Es una clase, objeto o microservicio que se debe encargar de realizar/cumplir una función en especifico.
+Es una clase, objeto o modulo responsable realizar una unica tarea o funcion, la cual "solo debe tener una razon para cambiar". Este principio promueve los ideales de la programacion orientada a objetos. Algunas ventajas de este principio son: un nivel muy alto de abstracción, modularidad y la reutilización de componentes debido a que cada clase está completamente encapsulada.
 
 
 ### Que caracteristicas  tiene un buen buen codigo ###
