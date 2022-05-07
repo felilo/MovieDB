@@ -133,13 +133,11 @@ class MediaListController: UICollectionViewController {
   
   
   private func handleOnFetchItems(_ reloadData: Bool?) {
-      
+    collectionView.endRefreshing()
     guard reloadData == true else {
-      collectionView.endRefreshing()
       collectionView.perform(#selector(collectionView.reloadSectionWithDelay), with: nil, afterDelay: 0.05)
       return
     }
-    collectionView.endRefreshing()
     collectionView.perform(#selector(collectionView.reloadData), with: nil, afterDelay: 0.05)
   }
   

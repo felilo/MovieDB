@@ -14,7 +14,7 @@ class VideoPlayerViewModelTest: XCTestCase {
   
   let homeCoordinator: HomeCoordinator = {
     let parentCoordinator = (UIApplication.shared.delegate as? AppDelegate)?.mainCoordinator
-    return .init(withPresent: parentCoordinator!)
+    return .init(present: parentCoordinator!)
   }()
   
   
