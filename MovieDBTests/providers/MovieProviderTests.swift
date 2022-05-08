@@ -15,9 +15,7 @@ class MovieProviderTests: XCTestCase {
   // ---------------------------------------------------------------------
   
 
-  let id = 436969
   var sut: MovieProvider!
-  var expt: XCTestExpectation!
 
   
   
@@ -28,14 +26,12 @@ class MovieProviderTests: XCTestCase {
   
   override func setUp() {
     sut = .init()
-    expt = XCTestExpectation()
     super.setUp()
   }
   
   
   override func tearDown() {
     sut = nil
-    expt = nil
     super.tearDown()
   }
   
@@ -57,13 +53,7 @@ class MovieProviderTests: XCTestCase {
             XCTAssertTrue(true)
             cExpt.fulfill()
           case .failure(let error):
-            if !RequestManager.isAvailableNetwork {
-              XCTAssertTrue(true, "Fail but network is not working")
-            } else {
-              XCTFail("Expected to be a success but got a failure with: \(error.localizedDescription)\n\n")
-            }
-            cExpt.fulfill()
-            break
+            self.handleError(expt: cExpt, error: error)
         }
       }
       expts.append(cExpt)
@@ -73,21 +63,29 @@ class MovieProviderTests: XCTestCase {
   
   
   func test_detail_endpoint() throws {
+    let expt = XCTestExpectation()
+    let id = 436969
+    
     sut.getDetail(id: id) { response in
       switch response {
         case .success(let result):
-          XCTAssertTrue(result.id != nil, "finalizo el detail, el id es null")
-          self.expt.fulfill()
+          XCTAssertTrue(result.id != nil)
+          expt.fulfill()
         case .failure(let error):
-          if !RequestManager.isAvailableNetwork {
-            XCTAssertTrue(true, "Fail but network is not working")
-          } else {
-            XCTFail("Expected to be a success but got a failure with: \(error.localizedDescription)\n\n")
-          }
-          self.expt.fulfill()
-          break
+          self.handleError(expt: expt, error: error)
       }
     }
     wait(for: [expt], timeout: 5)
+  }
+  
+  
+  
+  func handleError(expt: XCTestExpectation, error: Error) {
+    if !RequestManager.isAvailableNetwork {
+      XCTAssertTrue(true, "Fail but network is not working")
+    } else {
+      XCTFail("Expected to be a success but got a failure with: \(error.localizedDescription)\n\n")
+    }
+    expt.fulfill()
   }
 }
